@@ -1,22 +1,16 @@
-\documentclass{article}
+\documentclass[border=10pt]{standalone}
 
 \usepackage{ctex}
 \usepackage{amsmath}
 
-\setlength\parindent{0pt}
-\setlength{\topmargin}{0pt}
-\thispagestyle{empty}
-
-
 \begin{document}
-
-$p = $诚实节点找到下一个区块的概率\\
-$q = $攻击者找到下一个区块的概率\\
-$q_z =$ 攻击者从落后 $z$ 个区块赶上诚实链的概率\\
+$p = $诚实节点找到下一个区块的概率 \\
+$q = $攻击者找到下一个区块的概率 \\
+$q_z =$ 攻击者从落后 $z$ 个区块赶上诚实链的概率 \\
 \\
-$q_z = \begin{Bmatrix}
-1 & if \ p <= q\\
-(q / p)^z & if \ p > q\\
-\end{Bmatrix}$
-
+$q_z =
+ \begin{Bmatrix}
+  1         & if \ p <= q \\
+  (q / p)^z & if \ p > q  
+ \end{Bmatrix}$
 \end{document}
