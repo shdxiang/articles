@@ -27,10 +27,10 @@
 <path style="stroke:none;" d="M 1.09375 0 L 1.09375 -1.203125 L 2.296875 -1.203125 L 2.296875 0 Z M 1.09375 0 "/>
 </symbol>
 </g>
-<clipPath id="clip1">
+<clipPath id="clip3">
   <rect width="112" height="68"/>
 </clipPath>
-<g id="surface4" clip-path="url(#clip1)">
+<g id="surface8" clip-path="url(#clip3)">
 <rect x="0" y="0" width="112" height="68" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
 <path style="fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:0.12;stroke-linecap:butt;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 309.300781 357.898438 L 278.800781 357.898438 L 278.800781 424.199219 L 339.800781 424.199219 L 339.800781 357.898438 Z M 309.300781 357.898438 " transform="matrix(1,0,0,-1,-256,425)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
@@ -87,6 +87,18 @@
 <path style="fill:none;stroke-width:0.1132;stroke-linecap:butt;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 334.300781 402 L 362.199219 402 " transform="matrix(1,0,0,-1,-256,425)"/>
 <path style="fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;stroke-width:0.1132;stroke-linecap:butt;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 367.601562 385.5 L 360.898438 383.199219 L 360.898438 387.601562 Z M 367.601562 385.5 " transform="matrix(1,0,0,-1,-256,425)"/>
 <path style="fill:none;stroke-width:0.1132;stroke-linecap:butt;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 334.300781 385.5 L 362.199219 385.5 " transform="matrix(1,0,0,-1,-256,425)"/>
+</g>
+<clipPath id="clip2">
+  <rect width="112" height="68"/>
+</clipPath>
+<g id="surface10" clip-path="url(#clip2)">
+<use xlink:href="#surface8"/>
+</g>
+<clipPath id="clip1">
+  <rect width="112" height="68"/>
+</clipPath>
+<g id="surface4" clip-path="url(#clip1)">
+<use xlink:href="#surface10"/>
 </g>
 </defs>
 <g id="surface1">
