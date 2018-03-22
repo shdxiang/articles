@@ -136,17 +136,9 @@
 
 攻击者从某一落后位置赶上诚实链的概率类似于赌徒破产理论。设想一个拥有无限信用的赌徒从一定亏损开始，进行可能无限次的赌博试图达到盈亏平衡。我们可以计算他达到盈亏平衡，即一个攻击者赶上诚实链的概率，如下\cite{Feller}：
 
-\begin{align*}
-  & p = \text{诚实节点找到下一个区块的概率}            \\
-  & q = \text{攻击者找到下一个区块的概率}              \\
-  & q_z = \text{攻击者从落后 z 个区块赶上诚实链的概率} \\
-  & q_z =                                              
- \begin{Bmatrix}
-  1         & if \ p \leq q \\
-  (q / p)^z & if \ p > q    
- \end{Bmatrix}
-\end{align*}
-
+\begin{center}
+ \includegraphics{bitcoin-zh-cn-8}
+\end{center}
 
 我们假设 $p > q$，概率将随着攻击者需要赶上的区块数增加而呈指数下降。 由于形势对他不利，如果他没有在早期幸运地快速赶上，他落得越远赶上的机会就越渺茫。
 
@@ -156,30 +148,21 @@
 
 收款人等到交易被加到区块中且其后追加了 $z$ 个区块。他不知道攻击者确切的进度，但是假设诚实的区块按期望的平均时间生成，攻击者可能的进度将是一个泊松分布，其期望值为：
 
-\begin{align*}
- \lambda = z\frac{q}{p}
-\end{align*}
+\begin{center}
+ \includegraphics{bitcoin-zh-cn-9}
+\end{center}
 
 为计算攻击者现在仍然能赶上的概率，我们给每个他可能达到的进度的泊松密度乘以他在那个进度能赶上诚实链的概率：
 
-\begin{align*}
- \sum_{k = 0}^{\infty}
- \frac{\lambda^ke^{-\lambda}}{k!}
- \cdot
- \begin{Bmatrix}
-  (q / p)^z & if \ k \leq z \\
-  1         & if \ k > z    
- \end{Bmatrix}
-\end{align*}
+\begin{center}
+ \includegraphics{bitcoin-zh-cn-10}
+\end{center}
 
 变换以避免对分布的无限尾部求和...
 
-\begin{align*}
- 1-
- \sum_{k = 0}^{z}
- \frac{\lambda^ke^{-\lambda}}{k!}
- \big(1 - (q / p)^{(z - k)}\big)
-\end{align*}
+\begin{center}
+ \includegraphics{bitcoin-zh-cn-11}
+\end{center}
 
 转换成 C 语言代码...
 
