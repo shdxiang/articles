@@ -9,7 +9,7 @@
 [trickle](http://manpages.ubuntu.com/manpages/trusty/man1/trickle.1.html) 可以限制某个应用的带宽，如运行 `ss-server` 并限制其上传速度 512 KB/s，下载速度 256 KB/s：
 
 ```
-sudo apt-get install trickle
+apt-get install trickle
 trickle -u 512 -d 256 ss-server
 ```
 
@@ -20,8 +20,8 @@ trickle -u 512 -d 256 ss-server
 [wondershaper](http://manpages.ubuntu.com/manpages/xenial/man8/wondershaper.8.html) 是一个网络流量调整脚本，它内部是调用的 `tc`（后面会提到），可以限制指定网卡的速度，如限制 `eth0` 的出口速度 512 KB/s，入口速度 256 KB/s：
 
 ```
-sudo apt-get install wondershaper
-sudo wondershaper eth0 1024 2048
+apt-get install wondershaper
+wondershaper eth0 1024 2048
 ```
 
 注意 `wondershaper` 使用的单位是 Kbits/s。如在容器内使用，`docker run` 启动容器时候需要带上 `--cap-add=NET_ADMIN` 选项。
@@ -35,7 +35,7 @@ sudo wondershaper eth0 1024 2048
 使用以下命令可限制容器 `eth0` 的出口速度为 512 KB/s（没有研究怎么设置入口速度），而几乎没有带来额外的性能损耗：
 
 ```
-sudo apt-get install iproute2
+apt-get install iproute2
 tc qdisc add dev eth0 root tbf rate 4mbit peakrate 8mbit burst 64kb latency 50ms minburst 1540
 ```
 
